@@ -74,19 +74,19 @@ gulp.task('images', function(){
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
     .pipe(plumber())
     // Caching images that ran through imagemin
-    .pipe(cache(imagemin({
+    .pipe(imagemin({
       progressive: true,
       interlaced: true,
       // don't remove IDs from SVGs, they are often used
       // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
-    })))
-    .pipe(gulp.dest('dist/images'))
+    }))
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+  .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('clean', function(done) {
@@ -114,7 +114,7 @@ gulp.task('useref', ['styles', 'scripts', 'templates'], function(){
     .pipe(gulpIf('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 // inject bower components

@@ -19,3 +19,24 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
 }
+
+
+.submit-button {
+  position: absolute;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  width: 250px;
+  height: 115px;
+}
+
+
+.info-container {
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: red;
+  border: 2px solid black;
+  min-height: 400px;
+  width: 200px;
+}
